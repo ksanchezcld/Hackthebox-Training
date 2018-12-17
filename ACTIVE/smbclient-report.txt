@@ -1,0 +1,122 @@
+Anonymous login successful
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  active.htb                          D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  DfsrPrivate                       DHS        0  Sat Jul 21 06:37:44 2018
+  Policies                            D        0  Sat Jul 21 06:37:44 2018
+  scripts                             D        0  Wed Jul 18 14:48:57 2018
+
+\active.htb\DfsrPrivate
+  .                                 DHS        0  Sat Jul 21 06:37:44 2018
+  ..                                DHS        0  Sat Jul 21 06:37:44 2018
+  ConflictAndDeleted                  D        0  Wed Jul 18 14:51:30 2018
+  Deleted                             D        0  Wed Jul 18 14:51:30 2018
+  Installing                          D        0  Wed Jul 18 14:51:30 2018
+
+\active.htb\Policies
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  {31B2F340-016D-11D2-945F-00C04FB984F9}      D        0  Sat Jul 21 06:37:44 2018
+  {6AC1786C-016F-11D2-945F-00C04fB984F9}      D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\scripts
+  .                                   D        0  Wed Jul 18 14:48:57 2018
+  ..                                  D        0  Wed Jul 18 14:48:57 2018
+
+\active.htb\DfsrPrivate\ConflictAndDeleted
+  .                                   D        0  Wed Jul 18 14:51:30 2018
+  ..                                  D        0  Wed Jul 18 14:51:30 2018
+
+\active.htb\DfsrPrivate\Deleted
+  .                                   D        0  Wed Jul 18 14:51:30 2018
+  ..                                  D        0  Wed Jul 18 14:51:30 2018
+
+\active.htb\DfsrPrivate\Installing
+  .                                   D        0  Wed Jul 18 14:51:30 2018
+  ..                                  D        0  Wed Jul 18 14:51:30 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  GPT.INI                             A       23  Wed Jul 18 16:46:06 2018
+  Group Policy                        D        0  Sat Jul 21 06:37:44 2018
+  MACHINE                             D        0  Sat Jul 21 06:37:44 2018
+  USER                                D        0  Wed Jul 18 14:49:12 2018
+
+\active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  GPT.INI                             A       22  Wed Jul 18 14:49:12 2018
+  MACHINE                             D        0  Sat Jul 21 06:37:44 2018
+  USER                                D        0  Wed Jul 18 14:49:12 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\Group Policy
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  GPE.INI                             A      119  Wed Jul 18 16:46:06 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Microsoft                           D        0  Sat Jul 21 06:37:44 2018
+  Preferences                         D        0  Sat Jul 21 06:37:44 2018
+  Registry.pol                        A     2788  Wed Jul 18 14:53:45 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\USER
+  .                                   D        0  Wed Jul 18 14:49:12 2018
+  ..                                  D        0  Wed Jul 18 14:49:12 2018
+
+\active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\MACHINE
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Microsoft                           D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\USER
+  .                                   D        0  Wed Jul 18 14:49:12 2018
+  ..                                  D        0  Wed Jul 18 14:49:12 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Microsoft
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Windows NT                          D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Groups                              D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\MACHINE\Microsoft
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Windows NT                          D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Microsoft\Windows NT
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  SecEdit                             D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Groups.xml                          A      533  Wed Jul 18 16:46:06 2018
+
+\active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\MACHINE\Microsoft\Windows NT
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  SecEdit                             D        0  Sat Jul 21 06:37:44 2018
+
+\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Microsoft\Windows NT\SecEdit
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  GptTmpl.inf                         A     1098  Wed Jul 18 14:49:12 2018
+
+\active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\MACHINE\Microsoft\Windows NT\SecEdit
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  GptTmpl.inf                         A     3722  Wed Jul 18 14:49:12 2018
+
+		10459647 blocks of size 4096. 4931661 blocks available

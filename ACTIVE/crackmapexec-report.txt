@@ -1,0 +1,13 @@
+crackmapexec smb 10.10.10.100 -u '' -p '' --shares
+CME          10.10.10.100:445 DC              [*] Windows 6.1 Build 7601 (name:DC) (domain:ACTIVE)
+CME          10.10.10.100:445 DC              [-] ACTIVE\: STATUS_ACCESS_DENIED
+CME          10.10.10.100:445 DC              [+] Enumerating shares
+CME          10.10.10.100:445 DC              SHARE           Permissions
+CME          10.10.10.100:445 DC              -----           -----------
+CME          10.10.10.100:445 DC              ADMIN$          NO ACCESS
+CME          10.10.10.100:445 DC              IPC$            NO ACCESS
+CME          10.10.10.100:445 DC              SYSVOL          NO ACCESS
+CME          10.10.10.100:445 DC              C$              NO ACCESS
+CME          10.10.10.100:445 DC              Replication     READ
+CME          10.10.10.100:445 DC              NETLOGON        NO ACCESS
+CME          10.10.10.100:445 DC              Users           NO ACCESS

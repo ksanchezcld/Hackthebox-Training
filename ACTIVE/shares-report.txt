@@ -1,0 +1,13 @@
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[34m[*][0m Windows 6.1 Build 7601 (name:DC) (domain:ACTIVE)
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[32m[+][0m ACTIVE\SVC_TGS:GPPstillStandingStrong2k18 
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[32m[+][0m Enumerating shares
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mSHARE           Permissions[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33m-----           -----------[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mADMIN$          NO ACCESS[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mIPC$            NO ACCESS[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mSYSVOL          READ[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mC$              NO ACCESS[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mReplication     READ[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mNETLOGON        READ[0m
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[33mUsers           READ[0m
+[1m[34m[*][0m KTHXBYE!

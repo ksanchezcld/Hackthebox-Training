@@ -1,0 +1,44 @@
+[*] Performing General Enumeration of Domain: active.htb
+[*] Checking for Zone Transfer for active.htb name servers
+[*] Resolving SOA Record
+[+] 	 SOA dc.active.htb 10.10.10.100
+[*] Resolving NS Records
+[*] NS Servers found:
+[*] 	NS dc.active.htb 10.10.10.100
+[*] Removing any duplicate NS server IP Addresses...
+[*]  
+[*] Trying NS server 10.10.10.100
+[+] 10.10.10.100 Has port 53 TCP Open
+[-] Zone Transfer Failed!
+[-] No answer or RRset not for qname
+[*] Checking for Zone Transfer for active.htb name servers
+[*] Resolving SOA Record
+[+] 	 SOA dc.active.htb 10.10.10.100
+[*] Resolving NS Records
+[*] NS Servers found:
+[*] 	NS dc.active.htb 10.10.10.100
+[*] Removing any duplicate NS server IP Addresses...
+[*]  
+[*] Trying NS server 10.10.10.100
+[+] 10.10.10.100 Has port 53 TCP Open
+[-] Zone Transfer Failed!
+[-] No answer or RRset not for qname
+[-] DNSSEC is not configured for active.htb
+[*] 	 SOA dc.active.htb 10.10.10.100
+[*] 	 NS dc.active.htb 10.10.10.100
+[*] 	 Bind Version for 10.10.10.100 Microsoft DNS 6.1.7601 (1DB15D39)
+[-] Could not Resolve MX Records for active.htb
+[*] 	 A active.htb 10.10.10.100
+[*] Enumerating SRV Records
+[*] 	 SRV _kerberos._udp.active.htb dc.active.htb 10.10.10.100 88 100
+[*] 	 SRV _gc._tcp.active.htb dc.active.htb 10.10.10.100 3268 100
+[*] 	 SRV _kerberos._tcp.active.htb dc.active.htb 10.10.10.100 88 100
+[*] 	 SRV _ldap._tcp.active.htb dc.active.htb 10.10.10.100 389 100
+[*] 	 SRV _ldap._tcp.ForestDNSZones.active.htb dc.active.htb 10.10.10.100 389 100
+[*] 	 SRV _ldap._tcp.dc._msdcs.active.htb dc.active.htb 10.10.10.100 389 100
+[*] 	 SRV _kerberos._tcp.dc._msdcs.active.htb dc.active.htb 10.10.10.100 88 100
+[*] 	 SRV _kpasswd._udp.active.htb dc.active.htb 10.10.10.100 464 100
+[*] 	 SRV _kpasswd._tcp.active.htb dc.active.htb 10.10.10.100 464 100
+[*] 	 SRV _ldap._tcp.gc._msdcs.active.htb dc.active.htb 10.10.10.100 3268 100
+[*] 	 SRV _ldap._tcp.pdc._msdcs.active.htb dc.active.htb 10.10.10.100 389 100
+[+] 11 Records Found

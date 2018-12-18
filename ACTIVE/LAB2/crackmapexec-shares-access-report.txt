@@ -1,0 +1,5 @@
+#crackmapexec smb 10.10.10.100 -d ACTIVE -u 'SVC_TGS' -p 'GPPstillStandingStrong2k18' --shares
+
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[34m[*][0m Windows 6.1 Build 7601 (name:DC) (domain:ACTIVE)
+[1m[34mCME[0m          10.10.10.100:445 DC              [1m[32m[+][0m ACTIVE\SVC_TGS:GPPstillStandingStrong2k18 
+[1m[34m[*][0m KTHXBYE!

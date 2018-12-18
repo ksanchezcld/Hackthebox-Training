@@ -1,0 +1,191 @@
+client
+dev tun
+proto udp
+remote edge-eu-free-1.hackthebox.eu 1337
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+remote-cert-tls server
+comp-lzo
+verb 3
+cipher AES-128-CBC
+auth SHA256
+key-direction 1
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIEjzCCA3egAwIBAgIJAPsVEUQZUWvCMA0GCSqGSIb3DQEBBQUAMIGLMQswCQYD
+VQQGEwJVSzENMAsGA1UECBMEQ2l0eTEPMA0GA1UEBxMGTG9uZG9uMRMwEQYDVQQK
+EwpIYWNrVGhlQm94MRYwFAYDVQQDEw1IYWNrVGhlQm94IENBMQwwCgYDVQQpEwNo
+dGIxITAfBgkqhkiG9w0BCQEWEmluZm9AaGFja3RoZWJveC5ldTAeFw0xODEwMDUy
+MTM1NTlaFw0yODEwMDIyMTM1NTlaMIGLMQswCQYDVQQGEwJVSzENMAsGA1UECBME
+Q2l0eTEPMA0GA1UEBxMGTG9uZG9uMRMwEQYDVQQKEwpIYWNrVGhlQm94MRYwFAYD
+VQQDEw1IYWNrVGhlQm94IENBMQwwCgYDVQQpEwNodGIxITAfBgkqhkiG9w0BCQEW
+EmluZm9AaGFja3RoZWJveC5ldTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+ggEBAKzk24valqxb35YYGritHOkKNTsXEAEdZhuw/YDIgwLOgqAYbHMmFOJvReCN
+4Wg7B4MjNF41ySFvMW0IIvrs+GAdwewIgnOGMXKSQIFMzO8+G4BPYwp0mnr8Dsg3
+VunSBpCe/pBGXaWHmCHvMyU9gaK+L+RiwP0otVBuRnJqAWMSEzkD8lvBql5FXZas
+ONj8AtqsQXLkH9TNGauv4xIhYf5Pc5GnrzIjp5juGHgqMvbmmP03inyXYtZwtnCh
+VVSJaNWwj8lWkmFNJzMxBelV0Lk9FPOaI82NmBASbzeBsBD6SkO8S8HdBa6/WHdK
+ik50k/6tbtXthTJ7bmPucNP0rCECAwEAAaOB8zCB8DAdBgNVHQ4EFgQUWzjtM2DI
+Gv2jLocSchgy0bndVsswgcAGA1UdIwSBuDCBtYAUWzjtM2DIGv2jLocSchgy0bnd
+VsuhgZGkgY4wgYsxCzAJBgNVBAYTAlVLMQ0wCwYDVQQIEwRDaXR5MQ8wDQYDVQQH
+EwZMb25kb24xEzARBgNVBAoTCkhhY2tUaGVCb3gxFjAUBgNVBAMTDUhhY2tUaGVC
+b3ggQ0ExDDAKBgNVBCkTA2h0YjEhMB8GCSqGSIb3DQEJARYSaW5mb0BoYWNrdGhl
+Ym94LmV1ggkA+xURRBlRa8IwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOC
+AQEAMrkciEUqDjGl9SLIuh6eAsuZdQJjrDilvt5DIPhlvkBwjsMJUzbPHNrB8fDR
+emgL9V4v+NYgK3R+Cshbtu55RQu1GxqVxsBfDfqWYaMHN1CF1Z3buy2sKPJ5GP3i
+s3i8jhpDn2BdGiHjx2W1VgNQ+N849tCDAtFcr8asBFt5eoQ5UJ+ag6oE0gTPpQXH
+V+2WkZvyv9K/ttbt+XfHHGbKJhTgUdtYZjtneL88XHRJxbQbl5sCA2SQHQM0EX39
+QhzKNvipJrQMHl7OZ5b59st8f8HeOh6HNy5kvZ8EAlQnuNRVQes1M+38CP//t2hQ
+62EBqjfjXfUfnl2SYwGl5LAMgQ==
+-----END CERTIFICATE-----
+</ca>
+<cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 18783 (0x495f)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=UK, ST=City, L=London, O=HackTheBox, CN=HackTheBox CA/name=htb/emailAddress=info@hackthebox.eu
+        Validity
+            Not Before: Oct 29 07:58:00 2018 GMT
+            Not After : Oct 26 07:58:00 2028 GMT
+        Subject: C=UK, ST=London, L=City, O=HackTheBox, CN=ksanchez/emailAddress=ksanchez-78582-pIjo@hackthebox.vpn
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a7:18:b1:a8:b7:7a:3d:94:6a:59:42:f3:04:f0:
+                    95:4b:53:b4:e5:a0:43:ee:a4:cf:70:26:a2:15:e9:
+                    1e:cd:6c:45:a1:fc:0e:9f:3b:b2:a3:fb:96:17:d2:
+                    ef:3a:21:7a:63:a6:23:d3:53:36:4e:10:3f:0a:c1:
+                    67:be:f9:0b:8f:22:19:71:9b:28:f5:db:bb:74:7b:
+                    2d:4c:44:57:e1:b2:07:2a:17:96:07:24:d9:55:ce:
+                    40:3d:78:44:75:8e:84:c7:44:cb:52:d9:d9:9f:64:
+                    75:20:50:32:94:3e:74:5d:d9:3e:47:b8:df:e8:56:
+                    1d:e0:58:5e:13:c9:68:39:a6:82:66:a2:0c:99:ce:
+                    cf:a2:72:59:e5:c5:79:d7:8d:d5:1a:cb:29:90:c2:
+                    4c:29:9d:38:13:b4:69:b9:07:c9:f5:c9:17:a4:cf:
+                    ac:9b:33:d2:25:89:6a:7d:39:08:62:a6:b1:1a:c1:
+                    33:5f:bb:20:74:e0:f2:cc:51:b9:fe:0f:21:4b:13:
+                    d6:0d:1e:ad:72:53:ff:72:09:37:eb:e8:e9:17:f7:
+                    25:9a:6d:a1:e9:4c:77:55:16:89:56:3b:b7:fc:88:
+                    85:d8:a5:43:de:f4:8b:36:2d:e5:de:58:81:d0:9e:
+                    42:13:b4:64:1c:ee:85:44:7c:fc:51:e1:0b:29:28:
+                    05:25
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                E2:CC:01:0B:01:8A:57:42:C7:6F:52:E2:15:D7:A4:FF:16:4C:29:6C
+            X509v3 Authority Key Identifier: 
+                keyid:5B:38:ED:33:60:C8:1A:FD:A3:2E:87:12:72:18:32:D1:B9:DD:56:CB
+                DirName:/C=UK/ST=City/L=London/O=HackTheBox/CN=HackTheBox CA/name=htb/emailAddress=info@hackthebox.eu
+                serial:FB:15:11:44:19:51:6B:C2
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha1WithRSAEncryption
+         02:71:80:32:49:79:e5:00:9b:19:90:ca:ec:c1:83:8c:65:1c:
+         e8:d6:8c:3e:7a:89:74:82:9e:1d:09:77:df:83:6c:39:d4:bc:
+         81:7e:04:26:8f:c5:3b:9e:41:08:23:80:0e:5d:18:6a:2c:5d:
+         cb:93:12:81:4f:4a:72:1e:24:ec:71:08:c7:93:ea:7a:51:22:
+         eb:85:71:86:18:ed:dc:02:bf:ba:4c:df:96:dc:68:15:fa:d7:
+         10:cc:e1:30:6f:bb:9f:c3:e5:71:c9:a2:e6:a7:b1:ef:53:4e:
+         78:30:5b:c5:87:e3:e5:56:73:53:da:2a:2c:24:fa:b6:97:68:
+         61:5c:f6:a5:9c:2f:01:41:27:bf:62:a1:34:8b:a4:bd:81:b8:
+         f3:1a:ba:eb:65:14:8c:c2:be:17:5f:a1:24:fa:aa:03:32:a1:
+         ea:09:92:7c:b2:83:ee:b9:2f:64:d0:ce:12:bb:4a:43:e1:e3:
+         9f:05:46:60:8d:f5:46:5c:67:12:0f:a9:de:dc:91:2a:1c:15:
+         07:4f:65:23:82:f1:0a:d0:0e:07:47:36:b9:cb:70:1c:63:ce:
+         9e:26:15:f9:4c:5d:bc:fe:09:b1:90:0a:ab:94:2a:bb:34:d3:
+         91:ae:b2:7a:b1:0d:00:89:db:28:d3:88:dc:3c:96:b0:70:93:
+         bb:02:31:87
+-----BEGIN CERTIFICATE-----
+MIIE1TCCA72gAwIBAgICSV8wDQYJKoZIhvcNAQEFBQAwgYsxCzAJBgNVBAYTAlVL
+MQ0wCwYDVQQIEwRDaXR5MQ8wDQYDVQQHEwZMb25kb24xEzARBgNVBAoTCkhhY2tU
+aGVCb3gxFjAUBgNVBAMTDUhhY2tUaGVCb3ggQ0ExDDAKBgNVBCkTA2h0YjEhMB8G
+CSqGSIb3DQEJARYSaW5mb0BoYWNrdGhlYm94LmV1MB4XDTE4MTAyOTA3NTgwMFoX
+DTI4MTAyNjA3NTgwMFowgYgxCzAJBgNVBAYTAlVLMQ8wDQYDVQQIEwZMb25kb24x
+DTALBgNVBAcTBENpdHkxEzARBgNVBAoTCkhhY2tUaGVCb3gxETAPBgNVBAMTCGtz
+YW5jaGV6MTEwLwYJKoZIhvcNAQkBFiJrc2FuY2hlei03ODU4Mi1wSWpvQGhhY2t0
+aGVib3gudnBuMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApxixqLd6
+PZRqWULzBPCVS1O05aBD7qTPcCaiFekezWxFofwOnzuyo/uWF9LvOiF6Y6Yj01M2
+ThA/CsFnvvkLjyIZcZso9du7dHstTERX4bIHKheWByTZVc5APXhEdY6Ex0TLUtnZ
+n2R1IFAylD50Xdk+R7jf6FYd4FheE8loOaaCZqIMmc7PonJZ5cV5143VGsspkMJM
+KZ04E7RpuQfJ9ckXpM+smzPSJYlqfTkIYqaxGsEzX7sgdODyzFG5/g8hSxPWDR6t
+clP/cgk36+jpF/clmm2h6Ux3VRaJVju3/IiF2KVD3vSLNi3l3liB0J5CE7RkHO6F
+RHz8UeELKSgFJQIDAQABo4IBQjCCAT4wCQYDVR0TBAIwADAtBglghkgBhvhCAQ0E
+IBYeRWFzeS1SU0EgR2VuZXJhdGVkIENlcnRpZmljYXRlMB0GA1UdDgQWBBTizAEL
+AYpXQsdvUuIV16T/FkwpbDCBwAYDVR0jBIG4MIG1gBRbOO0zYMga/aMuhxJyGDLR
+ud1Wy6GBkaSBjjCBizELMAkGA1UEBhMCVUsxDTALBgNVBAgTBENpdHkxDzANBgNV
+BAcTBkxvbmRvbjETMBEGA1UEChMKSGFja1RoZUJveDEWMBQGA1UEAxMNSGFja1Ro
+ZUJveCBDQTEMMAoGA1UEKRMDaHRiMSEwHwYJKoZIhvcNAQkBFhJpbmZvQGhhY2t0
+aGVib3guZXWCCQD7FRFEGVFrwjATBgNVHSUEDDAKBggrBgEFBQcDAjALBgNVHQ8E
+BAMCB4AwDQYJKoZIhvcNAQEFBQADggEBAAJxgDJJeeUAmxmQyuzBg4xlHOjWjD56
+iXSCnh0Jd9+DbDnUvIF+BCaPxTueQQgjgA5dGGosXcuTEoFPSnIeJOxxCMeT6npR
+IuuFcYYY7dwCv7pM35bcaBX61xDM4TBvu5/D5XHJouanse9TTngwW8WH4+VWc1Pa
+Kiwk+raXaGFc9qWcLwFBJ79ioTSLpL2BuPMauutlFIzCvhdfoST6qgMyoeoJknyy
+g+65L2TQzhK7SkPh458FRmCN9UZcZxIPqd7ckSocFQdPZSOC8QrQDgdHNrnLcBxj
+zp4mFflMXbz+CbGQCquUKrs005GusnqxDQCJ2yjTiNw8lrBwk7sCMYc=
+-----END CERTIFICATE-----
+</cert>
+<key>
+-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCnGLGot3o9lGpZ
+QvME8JVLU7TloEPupM9wJqIV6R7NbEWh/A6fO7Kj+5YX0u86IXpjpiPTUzZOED8K
+wWe++QuPIhlxmyj127t0ey1MRFfhsgcqF5YHJNlVzkA9eER1joTHRMtS2dmfZHUg
+UDKUPnRd2T5HuN/oVh3gWF4TyWg5poJmogyZzs+iclnlxXnXjdUayymQwkwpnTgT
+tGm5B8n1yRekz6ybM9IliWp9OQhiprEawTNfuyB04PLMUbn+DyFLE9YNHq1yU/9y
+CTfr6OkX9yWabaHpTHdVFolWO7f8iIXYpUPe9Is2LeXeWIHQnkITtGQc7oVEfPxR
+4QspKAUlAgMBAAECggEAKFAB1IVnXWHoAl7viFqOehzYwKlYmkNytEjtw8F5J/Ae
+IIVR9cKOR5eTz22ZP3oCL/ZOIFar/EtZGjwszlsBGegNIWZgjGgVonVxKTw3w4CS
+z+nezRxrvpLC1tGkGoRmrjh/oR5jrVusEj6m5TLoGhgmOWF1y3SzQoOvNrDZj0aj
+zVHUt4I21Y+40ldJV9h6W0xvb6FC7k2MW8MGv2BAuTzt+RXIRwf+ae7+Mpk/mI61
+Y7lOfpQ2mVaHgKud1jjriWc6RZLJLvj8LPjuSxxdJ5iZA1uaZFL+C8UuSZgad3Fr
+XjdcIkido5ETuEupTyJiy2ut4+4jHP0CED3yq+VvpQKBgQDUFbyTpViSKlOBtFKM
+IqePO5l47WOtPwFwIukHPpBjnSxcIDtXFTpmCu0NM0+tuObfzKvBwS27e20yw+Ey
+OO6K8lNloJXvfA82/UFgz3pTvNy3aO10UEBdbioKj0dWKlbSve043Jy/TlNaJ73l
+N4NsBy1hEzSnngbJxZYqMexsjwKBgQDJsjISnuRmXzm7Y0zRxkq0PC8SQRPO3aXT
+OIxDTb8DGhp4a8tpLrs9mpR2ANElI07u2NkH3CHl1Owu7HWKmynaQ4dex1mY1t8A
+m6++Ti1UDqLMr6917OVEv3ptRy7dLGXB8QO/ZtidjBHucQpF5a2gkoTBmWgl2FQt
+xH3++H51CwKBgCNGCjs0QOruhz0HVMNh8CRucTQfp3hlBkQ0SjWePj2TIpGf+r6d
+FT1ri8mqQxJNsnh+fgKXspeAC8Vptsa3mVUawKwibU2LgKxQqtMDLwFGZB9NIFE8
+F7hyXiOreN3n5NDgLdhLOPbIfCx+d6Lr/Lu25eFDZHqMWeytJDCYZQ4ZAoGAbxOP
+t+mBZ09x/9zD5ZMKeQ/b7HWibv5p4FT4Cei7FP4/LapPr3Fo9Jg4wnPYulcjlS4e
+99EnaedE2uKmKNsixW0DFBM9KIrM7QzQUEHFfNFCnu7x9kOsT5wT1DKrgGp+77vH
+kJUXHkyRY3slaTD/2bpXGjddv9nPIhVgPhajrdkCgYB5A/S94BMwrEVUKhO2MpLd
+jxLPqF3cIpoPot5LAGRhRqSbVDVFwAmqIRAqUyP2EKQ9SAifPL3K2KsloEBDLFbA
+QXYzPL32cFlmqChNtUw8OvuTr85wHYxT7jiB/d5BcW5Kdk+yVviG67sfsQX2luFj
+4BezAeQ3jpS+da+iiuuQRw==
+-----END PRIVATE KEY-----
+</key>
+<tls-auth>
+#
+# 2048 bit OpenVPN static key
+#
+-----BEGIN OpenVPN Static key V1-----
+ce094e7336316a6705b982401102bb2c
+79e50638c7ca077c2f922852a0c3111f
+8ceadd6b13253b7bbeda85cb0cd6548f
+8433285d2163760a3a50a9bcbbcd9060
+1e311a78f8ed7f457b2d47422e70d5cd
+7f21a936139c2bf46bde34ac4bb598ef
+8936aa76221fc71c5c0a77b04515ebe9
+b435fe0d4c830bb10701e0b616311ffb
+7be39e7971e025095de76b8d6282fc93
+8fbe061d8853a8cc976330ba888ffe7b
+2afc345782c41915980be447aa8c19d0
+0de315b1de1d2bbe9b3cb557062c07d8
+54dd6f228a0e08ab3281cd1f4a5b7121
+ca6f316523d185e71434da6ac841b847
+bccaf2ce2ee947a9d4c71f1d24db78ad
+647eba9582200934446f0a00a75a0998
+-----END OpenVPN Static key V1-----
+</tls-auth>

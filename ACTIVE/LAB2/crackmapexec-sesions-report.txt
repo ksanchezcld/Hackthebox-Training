@@ -1,0 +1,4 @@
+crackmapexec smb 10.10.10.100 -d ACTIVE -u 'SVC_TGS' -p 'GPPstillStandingStrong2k18' --sessions
+CME          10.10.10.100:445 DC              [*] Windows 6.1 Build 7601 (name:DC) (domain:ACTIVE)
+CME          10.10.10.100:445 DC              [+] ACTIVE\SVC_TGS:GPPstillStandingStrong2k18
+CME          10.10.10.100:445 DC              [+] Enumerating active sessions

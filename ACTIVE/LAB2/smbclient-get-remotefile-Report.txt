@@ -1,0 +1,18 @@
+#smbclient //10.10.10.100/Replication
+
+Unable to initialize messaging context
+
+Enter WORKGROUP\devops's password:
+Anonymous login successful
+Try "help" to get a list of possible commands.
+smb: \> recurse ON
+smb: \> prompt OFF
+smb: \> mget *
+getting file \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\GPT.INI of size 23 as GPT.INI (0.0 KiloBytes/sec) (average 0.0 KiloBytes/sec)
+getting file \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\Group Policy\GPE.INI of size 119 as GPE.INI (0.1 KiloBytes/sec) (average 0.0 KiloBytes/sec)
+getting file \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Microsoft\Windows NT\SecEdit\GptTmpl.inf of size 1098 as GptTmpl.inf (0.9 KiloBytes/sec) (average 0.3 KiloBytes/sec)
+getting file \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\Groups.xml of size 533 as Groups.xml (0.4 KiloBytes/sec) (average 0.3 KiloBytes/sec)
+getting file \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Registry.pol of size 2788 as Registry.pol (2.1 KiloBytes/sec) (average 0.6 KiloBytes/sec)
+getting file \active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\GPT.INI of size 22 as GPT.INI (0.0 KiloBytes/sec) (average 0.5 KiloBytes/sec)
+getting file \active.htb\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}\MACHINE\Microsoft\Windows NT\SecEdit\GptTmpl.inf of size 3722 as GptTmpl.inf (3.4 KiloBytes/sec) (average 0.9 KiloBytes/sec)
+smb: \>

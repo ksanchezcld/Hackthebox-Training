@@ -1,0 +1,12 @@
+[+] Finding open SMB ports....
+[+] User SMB session establishd on 10.10.10.100...
+[+] IP: 10.10.10.100:445	Name: active.htb                                        
+	Disk                                                  	Permissions
+	----                                                  	-----------
+	ADMIN$                                            	NO ACCESS
+	C$                                                	NO ACCESS
+	IPC$                                              	NO ACCESS
+	NETLOGON                                          	NO ACCESS
+	Replication                                       	READ ONLY
+	SYSVOL                                            	NO ACCESS
+	Users                                             	NO ACCESS

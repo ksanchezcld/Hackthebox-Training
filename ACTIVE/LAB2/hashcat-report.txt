@@ -1,0 +1,3 @@
+#hashcat -m 13100 /Volumes/DATAFILE/GITHUB/PENTEST/CTF/HACKTHEBOX/ACTIVE/LAB2/hash.administrador /Volumes/DATAFILE/GITHUB/PENTEST/CTF/rockyou.txt --force
+
+PASSWORD: GPPstillStandingStrong2k18

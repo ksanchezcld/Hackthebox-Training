@@ -1,0 +1,185 @@
+smbmap -d active.htb -u svc_tgs -p GPPstillStandingStrong2k18 -H 10.10.10.100
+[+] Finding open SMB ports....
+[+] User SMB session establishd on 10.10.10.100...
+[+] IP: 10.10.10.100:445	Name: active.htb
+	Disk                                                  	Permissions
+	----                                                  	-----------
+	ADMIN$                                            	NO ACCESS
+	C$                                                	NO ACCESS
+	IPC$                                              	NO ACCESS
+	NETLOGON                                          	READ ONLY
+	Replication                                       	READ ONLY
+	SYSVOL                                            	READ ONLY
+	Users                                             	READ ONLY
+devops@kali2:~/HACKTHEBOX/ACTIVE/LAB2/active.htb$ touch smbmap-smb-Report.txt
+devops@kali2:~/HACKTHEBOX/ACTIVE/LAB2/active.htb$ vim smbmap-smb-Report.txt
+devops@kali2:~/HACKTHEBOX/ACTIVE/LAB2/active.htb$
+devops@kali2:~/HACKTHEBOX/ACTIVE/LAB2/active.htb$ smbmap -d active.htb -u svc_tgs -p GPPstillStandingStrong2k18 -H 10.10.10.100 -R Users
+[+] Finding open SMB ports....
+[+] User SMB session establishd on 10.10.10.100...
+[+] IP: 10.10.10.100:445	Name: active.htb
+	Disk                                                  	Permissions
+	----                                                  	-----------
+	Users                                             	READ ONLY
+	.\
+	dw--w--w--                0 Sat Jul 21 10:39:20 2018	.
+	dw--w--w--                0 Sat Jul 21 10:39:20 2018	..
+	dr--r--r--                0 Mon Jul 16 06:14:21 2018	Administrator
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	All Users
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Default
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Default User
+	-r--r--r--              174 Mon Jul 16 17:01:17 2018	desktop.ini
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Public
+	dr--r--r--                0 Sat Jul 21 11:16:32 2018	SVC_TGS
+	.\\Default\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	AppData
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Application Data
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Cookies
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Desktop
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Documents
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Downloads
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Favorites
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Links
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Local Settings
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Music
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	My Documents
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	NetHood
+	-r--r--r--           262144 Mon Jul 30 09:47:52 2018	NTUSER.DAT
+	-r--r--r--             1024 Mon Jul 16 17:01:17 2018	NTUSER.DAT.LOG
+	-r--r--r--            95232 Mon Jul 30 09:47:52 2018	NTUSER.DAT.LOG1
+	-r--r--r--                0 Mon Jul 16 17:08:47 2018	NTUSER.DAT.LOG2
+	-r--r--r--            65536 Mon Jul 16 17:01:17 2018	NTUSER.DAT{016888bd-6c6f-11de-8d1d-001e0bcde3ec}.TM.blf
+	-r--r--r--           524288 Mon Jul 16 17:01:17 2018	NTUSER.DAT{016888bd-6c6f-11de-8d1d-001e0bcde3ec}.TMContainer00000000000000000001.regtrans-ms
+	-r--r--r--           524288 Mon Jul 16 17:01:17 2018	NTUSER.DAT{016888bd-6c6f-11de-8d1d-001e0bcde3ec}.TMContainer00000000000000000002.regtrans-ms
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Pictures
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	PrintHood
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Recent
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Saved Games
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	SendTo
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Start Menu
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Templates
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Videos
+	.\\Default\AppData\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Local
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Roaming
+	.\\Default\AppData\Local\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Application Data
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	History
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Microsoft
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Temp
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	Temporary Internet Files
+	.\\Default\AppData\Local\Microsoft\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Windows
+	.\\Default\AppData\Local\Microsoft\Windows\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	GameExplorer
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	History
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Temporary Internet Files
+	.\\Default\AppData\Roaming\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Microsoft
+	.\\Default\AppData\Roaming\Microsoft\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Internet Explorer
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Windows
+	.\\Default\AppData\Roaming\Microsoft\Internet Explorer\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Quick Launch
+	.\\Default\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	-r--r--r--              207 Mon Jul 16 17:01:17 2018	desktop.ini
+	-r--r--r--             1304 Mon Jul 16 17:01:17 2018	Server Manager.lnk
+	-r--r--r--              290 Mon Jul 16 17:01:17 2018	Shows Desktop.lnk
+	-r--r--r--              272 Mon Jul 16 17:01:17 2018	Window Switcher.lnk
+	.\\Default\AppData\Roaming\Microsoft\Windows\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Cookies
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Network Shortcuts
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Printer Shortcuts
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Recent
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	SendTo
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Start Menu
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Templates
+^[[1;2B^[[1;2B^[[1;2B	.\\Default\AppData\Roaming\Microsoft\Windows\SendTo\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	-r--r--r--                3 Mon Jul 16 17:01:17 2018	Compressed (zipped) Folder.ZFSendToTarget
+	-r--r--r--                7 Mon Jul 16 17:01:17 2018	Desktop (create shortcut).DeskLink
+	-r--r--r--              440 Mon Jul 16 17:01:17 2018	Desktop.ini
+	-r--r--r--                4 Mon Jul 16 17:01:17 2018	Mail Recipient.MAPIMail
+	.\\Default\AppData\Roaming\Microsoft\Windows\Start Menu\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	Programs
+	.\\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	.
+	dr--r--r--                0 Mon Jul 16 17:08:47 2018	..
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Accessories
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Maintenance
+	.\\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	Accessibility
+	-r--r--r--             1280 Mon Jul 16 17:01:17 2018	Command Prompt.lnk
+	-r--r--r--              678 Mon Jul 16 17:01:17 2018	Desktop.ini
+	-r--r--r--             1304 Mon Jul 16 17:01:17 2018	Notepad.lnk
+	-r--r--r--              262 Mon Jul 16 17:01:17 2018	Run.lnk
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	System Tools
+	-r--r--r--             1228 Mon Jul 16 17:01:17 2018	Windows Explorer.lnk
+	.\\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\Accessibility\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	-r--r--r--              704 Mon Jul 16 17:01:17 2018	Desktop.ini
+	-r--r--r--             1358 Mon Jul 16 17:01:17 2018	Ease of Access.lnk
+	-r--r--r--             1258 Mon Jul 16 17:01:17 2018	Magnify.lnk
+	-r--r--r--             1262 Mon Jul 16 17:01:17 2018	Narrator.lnk
+	-r--r--r--             1250 Mon Jul 16 17:01:17 2018	On-Screen Keyboard.lnk
+	.\\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\System Tools\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	-r--r--r--              262 Mon Jul 16 17:01:17 2018	computer.lnk
+	-r--r--r--              262 Mon Jul 16 17:01:17 2018	Control Panel.lnk
+	-r--r--r--              448 Mon Jul 16 17:01:17 2018	Desktop.ini
+	.\\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Maintenance\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	-r--r--r--              318 Mon Jul 16 17:01:17 2018	Desktop.ini
+	-r--r--r--              262 Mon Jul 16 17:01:17 2018	Help.lnk
+	.\\Default\Documents\
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	.
+	dw--w--w--                0 Mon Jul 16 17:08:47 2018	..
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	My Music
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	My Pictures
+	dr--r--r--                0 Mon Jul 16 17:08:56 2018	My Videos
+	.\\SVC_TGS\
+	dr--r--r--                0 Sat Jul 21 11:16:32 2018	.
+	dr--r--r--                0 Sat Jul 21 11:16:32 2018	..
+	dr--r--r--                0 Sat Jul 21 11:14:20 2018	Contacts
+	dr--r--r--                0 Sat Jul 21 11:14:42 2018	Desktop
+	dr--r--r--                0 Sat Jul 21 11:14:28 2018	Downloads
+	dr--r--r--                0 Sat Jul 21 11:14:50 2018	Favorites
+	dr--r--r--                0 Sat Jul 21 11:15:00 2018	Links
+	dr--r--r--                0 Sat Jul 21 11:15:23 2018	My Documents
+	dr--r--r--                0 Sat Jul 21 11:15:40 2018	My Music
+	dr--r--r--                0 Sat Jul 21 11:15:50 2018	My Pictures
+	dr--r--r--                0 Sat Jul 21 11:16:05 2018	My Videos
+	dr--r--r--                0 Sat Jul 21 11:16:20 2018	Saved Games
+	dr--r--r--                0 Sat Jul 21 11:16:32 2018	Searches
+	.\\SVC_TGS\Desktop\
+	dr--r--r--                0 Sat Jul 21 11:14:42 2018	.
+	dr--r--r--                0 Sat Jul 21 11:14:42 2018	..
+	-r--r--r--               34 Sat Jul 21 11:14:42 2018	user.txt

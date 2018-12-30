@@ -1,0 +1,4 @@
+# Nmap 7.70 scan initiated Mon Dec 24 19:01:48 2018 as: nmap -sC -sV -oA devel-10.10.10.5 10.10.10.5
+Host: 10.10.10.5 ()	Status: Up
+Host: 10.10.10.5 ()	Ports: 21/open/tcp//ftp//Microsoft ftpd/, 80/open/tcp//http//Microsoft IIS httpd 7.5/	Ignored State: filtered (998)
+# Nmap done at Mon Dec 24 19:02:20 2018 -- 1 IP address (1 host up) scanned in 31.61 seconds

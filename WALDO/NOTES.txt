@@ -1,0 +1,3 @@
+#gobuster -u http://10.10.10.87 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+#gobuster -s 200,204,301,307,403 -u http://10.10.10.87 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+curl -s http://10.10.10.87/fileRead.php -d file=fileRead.php

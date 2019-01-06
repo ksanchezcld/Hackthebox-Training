@@ -1,0 +1,1 @@
+# Nmap 7.70 scan initiated Sun Dec 23 02:04:09 2018 as: nmap -T4 -A -v -oA legacy-10.10.10.4-2 10.10.10.4

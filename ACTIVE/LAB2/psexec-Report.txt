@@ -1,0 +1,11 @@
+psexec.py active.htb/svc_tgs@10.10.10.100
+Impacket v0.9.18 - Copyright 2018 SecureAuth Corporation
+
+Password:
+[*] Requesting shares on 10.10.10.100.....
+[-] share 'ADMIN$' is not writable.
+[-] share 'C$' is not writable.
+[-] share 'NETLOGON' is not writable.
+[-] share 'Replication' is not writable.
+[-] share 'SYSVOL' is not writable.
+[-] share 'Users' is not writable.

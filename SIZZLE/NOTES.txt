@@ -1,0 +1,35 @@
+- nmap -p 80 --script http-methods localhost
+
+PORT   STATE SERVICE
+80/tcp open  http
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+
+
+- nmap -p 443 --script http-methods 10.10.10.103
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2019-05-28 19:42 UTC
+Nmap scan report for 10.10.10.103
+Host is up (0.081s latency).
+PORT    STATE SERVICE
+443/tcp open  https
+| http-methods:
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+
+
+[DOCUMENTATION]
+
+>> The TRACE method, while apparently harmless, can be successfully leveraged in some scenarios to steal legitimate users' credentials.
+
+>> Tagging a cookie as httpOnly forbids JavaScript from accessing it, protecting it from being sent to a third party. However, the TRACE method can be used to bypass this protection and access the cookie even in this scenario. 
+
+
+
+
+SOURCE: 
+
+https://www.owasp.org/index.php/Test_HTTP_Methods_(OTG-CONFIG-006)
+https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+https://blog.jeremiahgrossman.com/2007/04/xst-lives-bypassing-httponly.html
+https://www.cgisecurity.com/whitehat-mirror/WhitePaper_screen.pdf

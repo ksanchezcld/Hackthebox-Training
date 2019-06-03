@@ -29,7 +29,9 @@ PORT    STATE SERVICE
 
 SOURCE: 
 
-https://www.owasp.org/index.php/Test_HTTP_Methods_(OTG-CONFIG-006)
-https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
-https://blog.jeremiahgrossman.com/2007/04/xst-lives-bypassing-httponly.html
-https://www.cgisecurity.com/whitehat-mirror/WhitePaper_screen.pdf
+- https://snowscan.io/htb-writeup-sizzle/#
+- https://www.owasp.org/index.php/Test_HTTP_Methods_(OTG-CONFIG-006)
+- https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+- https://blog.jeremiahgrossman.com/2007/04/xst-lives-bypassing-httponly.html
+- https://www.cgisecurity.com/whitehat-mirror/WhitePaper_screen.pdf
+- https://www.youtube.com/watch?v=FSBxzXjOUTA

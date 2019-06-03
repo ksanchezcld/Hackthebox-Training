@@ -1,0 +1,8 @@
+meterpreter > sysinfo
+Computer        : OPTIMUM
+OS              : Windows 2012 R2 (Build 9600).
+Architecture    : x64
+System Language : el_GR
+Domain          : HTB
+Logged On Users : 1
+Meterpreter     : x86/windows

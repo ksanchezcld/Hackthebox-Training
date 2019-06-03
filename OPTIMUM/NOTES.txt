@@ -1,0 +1,20 @@
+1. ENUMERACION
+
+>> nmap -sC -sV 10.10.10.8 -oA Optimum-10.10.10.8-nmap-report
+
+[GOBUSTER]
+
+>> gobuster -u http://10.10.10.29 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+
+[DIRBUSTER]
+>> dirb http://10.10.10.29 /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+
+[DIRSEARCH]
+
+>> python3 dirsearch.py /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -e php -f 20 -u http://bank.htb
+
+
+
+SOURCES:
+
+https://www.exploit-db.com/exploits/39161

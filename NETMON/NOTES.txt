@@ -1,0 +1,18 @@
+Found Stack Overflow (DOS) Bug in 
+    >> 80/tcp  open  http         Indy httpd 18.1.37.13946 (Paessler PRTG bandwidth monitor)
+
+1. Enumerate the target
+    >> nmap -sC -sV 10.10.10.152 -oA Netmon-10.10.10.152-Report
+    >> nmap -p- 10.10.10.152 -T4 -oA Netmon-10.10.10.152-Report2
+
+
+- http://<IP ADDRESS>/index.htm?file=/css/manuals.css
+
+- http://<IP-ADDRESS>/index.htm?file=addmap.htm     :: Provoca un Stack Overflow
+
+- Run Exploit 
+
+Exploit Title: PRTG 18.1.39.1648 - Stack Overflow
+
+https://medium.com/stolabs/stack-overflow-jewish-napalm-on-prtg-network-monitoring-56609b0804c5
+https://www.exploit-db.com/download/44500

@@ -1,0 +1,9 @@
+nmap -sC -sV 10.10.10.8 -oA Optimum-10.10.10.8-nmap-report
+
+
+PORT   STATE SERVICE VERSION
+
+>> 80/tcp open  http    HttpFileServer httpd 2.3
+|_http-server-header: HFS 2.3
+|_http-title: HFS /
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows

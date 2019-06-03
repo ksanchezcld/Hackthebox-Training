@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.70 scan initiated Sun Jun  2 12:06:30 2019 as: nmap -p- -T4 -oA Netmon-10.10.10.152-Report2 10.10.10.152 -->
+<nmaprun scanner="nmap" args="nmap -p- -T4 -oA Netmon-10.10.10.152-Report2 10.10.10.152" start="1559491590" startstr="Sun Jun  2 12:06:30 2019" version="7.70" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>

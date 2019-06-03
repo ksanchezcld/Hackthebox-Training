@@ -1,0 +1,24 @@
+>> gobuster -u http://10.10.10.152 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+>> gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u 10.10.10.152
+
+=====================================================
+Gobuster v2.0.0              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.10.152/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Timeout      : 10s
+=====================================================
+2019/06/02 00:37:42 Starting gobuster
+=====================================================
+2019/06/02 00:37:43 [-] Wildcard response found: http://10.10.10.152/50fb9fc7-8db1-405c-9570-2d04b7edc627 => 302
+2019/06/02 00:37:43 [!] To force processing of Wildcard responses, specify the '-fw' switch.
+=====================================================
+2019/06/02 00:37:43 Finished
+=====================================================
+
+
+FOUND!!!
+>> http://10.10.10.152/50fb9fc7-8db1-405c-9570-2d04b7edc627

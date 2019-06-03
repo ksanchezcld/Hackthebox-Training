@@ -1,4 +1,5 @@
 [NMAP]
+
 nmap -sC -sV 10.10.10.100 -o nmap.tcp
 nmap -sC -sV 10.10.10.100 -oA nmap-report
 nmap -p445 --script smb2-time 10.10.10.100

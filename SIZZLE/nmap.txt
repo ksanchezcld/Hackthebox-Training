@@ -1,26 +1,32 @@
-nmap -sC -sV 10.10.10.103  -oA Sizzle-nmap-report
+>> nmap -sC -sV 10.10.10.103  -oA Sizzle-nmap-report
 
-Starting Nmap 7.40 ( https://nmap.org ) at 2019-05-28 18:56 UTC
 Nmap scan report for 10.10.10.103
-Host is up (0.080s latency).
-Not shown: 987 filtered ports
+
+
 PORT     STATE SERVICE       VERSION
-21/tcp   open  ftp           Microsoft ftpd
+
+>> 21/tcp   open  ftp           Microsoft ftpd
 |_ftp-anon: Anonymous FTP login allowed (FTP code 230)
-53/tcp   open  domain        Microsoft DNS
-80/tcp   open  http          Microsoft IIS httpd 10.0
+
+>> 53/tcp   open  domain        Microsoft DNS
+
+>> 80/tcp   open  http          Microsoft IIS httpd 10.0
 | http-methods:
 |_  Potentially risky methods: TRACE
 |_http-server-header: Microsoft-IIS/10.0
 |_http-title: Site doesn't have a title (text/html).
-135/tcp  open  msrpc         Microsoft Windows RPC
-139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
-389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+
+>> 135/tcp  open  msrpc         Microsoft Windows RPC
+
+>> 139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+
+>> 389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
 | ssl-cert: Subject: commonName=sizzle.htb.local
 | Not valid before: 2018-07-03T17:58:55
 |_Not valid after:  2020-07-02T17:58:55
 |_ssl-date: 2019-05-28T19:05:20+00:00; -2s from scanner time.
-443/tcp  open  ssl/http      Microsoft IIS httpd 10.0
+
+>> 443/tcp  open  ssl/http      Microsoft IIS httpd 10.0
 | http-methods:
 |_  Potentially risky methods: TRACE
 |_http-server-header: Microsoft-IIS/10.0
@@ -29,20 +35,26 @@ PORT     STATE SERVICE       VERSION
 | Not valid before: 2018-07-03T17:58:55
 |_Not valid after:  2020-07-02T17:58:55
 |_ssl-date: 2019-05-28T19:05:21+00:00; -2s from scanner time.
-445/tcp  open  microsoft-ds?
-464/tcp  open  kpasswd5?
-593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+
+>> 445/tcp  open  microsoft-ds?
+
+>> 464/tcp  open  kpasswd5?
+
+>> 593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+
+>> 636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
 | ssl-cert: Subject: commonName=sizzle.htb.local
 | Not valid before: 2018-07-03T17:58:55
 |_Not valid after:  2020-07-02T17:58:55
 |_ssl-date: 2019-05-28T19:05:21+00:00; -2s from scanner time.
-3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+
+>> 3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
 | ssl-cert: Subject: commonName=sizzle.htb.local
 | Not valid before: 2018-07-03T17:58:55
 |_Not valid after:  2020-07-02T17:58:55
 |_ssl-date: 2019-05-28T19:05:21+00:00; -2s from scanner time.
-3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
+
+>> 3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
 | ssl-cert: Subject: commonName=sizzle.htb.local
 | Not valid before: 2018-07-03T17:58:55
 |_Not valid after:  2020-07-02T17:58:55
@@ -52,6 +64,3 @@ Service Info: Host: SIZZLE; OS: Windows; CPE: cpe:/o:microsoft:windows
 Host script results:
 |_clock-skew: mean: -2s, deviation: 0s, median: -2s
 |_smbv2-enabled: Server supports SMBv2 protocol
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 600.31 seconds

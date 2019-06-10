@@ -1,0 +1,38 @@
+[NMAP]
+
+>> nmap -sC -sV 10.10.10.121 --open
+>> nmap -sC -sV -p- 10.10.10.121
+>> ports=$(nmap -p- --min-rate=1000 -sT -T4 10.10.10.121 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//
+
+[GOBUSTER]
+
+>> gobuster -w directory-list-2.3-medium.txt -t 100 -u http://10.10.10.121/ -o report
+
+>> gobuster -u http://help.htb/ -w /usr/share/seclists/Discovery/Web-Content/big.txt -o help-gobusterReport-2
+
+[SEARCHEXPLOIT]
+
+>> search exploit HelpDeskZ
+
+
+[EXPLOIT]
+
+>> http://10.10.10.121/support/?v=submit_ticket6d8de43c3a562cf8ed5e566f8d3ca90f.php
+
+
+[LINUX COMMANDS]
+
+>> locate cmd.php
+
+
+[HTTP]
+
+>> http://10.10.10.121/support/UPGRADING.txt
+
+
+SOURCE
+
+- https://github.com/evolutionscript/HelpDeskZ-1.0
+- https://0xrick.github.io/hack-the-box/help/
+- https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+- https://www.exploit-db.com/exploits/40300

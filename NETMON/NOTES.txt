@@ -1,9 +1,28 @@
-Found Stack Overflow (DOS) Bug in 
-    >> 80/tcp  open  http         Indy httpd 18.1.37.13946 (Paessler PRTG bandwidth monitor)
+IP: 10.10.10.152
 
-1. Enumerate the target
+
+
+TOOLS
+
+- 
+
+
+
+
+[1.ENUMERATION]
+
     >> nmap -sC -sV 10.10.10.152 -oA Netmon-10.10.10.152-Report
     >> nmap -p- 10.10.10.152 -T4 -oA Netmon-10.10.10.152-Report2
+
+>> 80/tcp    open  http         Indy httpd 18.1.37.13946 (Paessler PRTG bandwidth monitor)       << Found Stack Overflow (DOS) Bug
+
+>> 135/tcp   open  msrpc        Microsoft Windows RPC
+
+>> 139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+
+>> 445/tcp   open  microsoft-ds Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+
+>> 5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
 
 
 - http://<IP ADDRESS>/index.htm?file=/css/manuals.css

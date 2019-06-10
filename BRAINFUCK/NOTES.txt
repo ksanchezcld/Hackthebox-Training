@@ -1,0 +1,9 @@
+IP: 10.10.10.117
+
+[DNS]
+
+>> DNS:www.brainfuck.htb, 
+>> DNS:sup3rs3cr3t.brainfuck.htb
+
+ssl-cert: Subject: 
+    >> commonName=brainfuck.htb/organizationName=Brainfuck Ltd./stateOrProvinceName=Attica/countryName=GR

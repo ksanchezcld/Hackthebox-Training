@@ -44,7 +44,7 @@ fileName = sys.argv[2]
  
 currentTime = int(time.time())
  
-for x in range(0, 300):
+for x in range(0, 90):
     plaintext = fileName + str(currentTime - x)
     md5hash = hashlib.md5(plaintext).hexdigest()
  
